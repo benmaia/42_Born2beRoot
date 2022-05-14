@@ -69,9 +69,9 @@ To study to evaluation see my evaluation guide <a href="https://github.com/benma
 
 <h2 id="Tu">Video Tutorial</h2>
 
-VM + Debian instalation
-<img src="" width="1000" height="450">
+### VM + Debian instalation
+<img src="https://cdn.discordapp.com/attachments/461563270411714561/975159407904178236/vm.gif" width="1000" height="450">
 
-Born2beRoot Script
-<img src="" width="1000" height="450">
+### Born2beRoot Script
+<img src="https://cdn.discordapp.com/attachments/461563270411714561/975162991022604318/b2br.gif" width="1000" height="750">
 
