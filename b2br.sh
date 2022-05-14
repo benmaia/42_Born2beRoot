@@ -7,7 +7,7 @@ $USER = $(whoami)
 #Update and Upgrade the system
 sudo apt update
 sudo apt upgrade -y
-sudo apt install openssh-server
+sudo apt install openssh-server -y
 
 #Add user to sudo group
 sudo usermod -aG sudo $USER
@@ -20,12 +20,12 @@ sudo usermod -aG user42 $USER
 sudo sed -i 's/#Port 22/Port 4242/' /etc/ssh/sshd_config 
 
 #Install and acivate ufw
-sudo apt install ufw
+sudo apt install ufw -y
 sudo ufw enable
 sudo ufw allow 4242/tcp
 
 #Doing the password policy
-sudo apt install libpam-pwquality
+sudo apt install libpam-pwquality -y
 sudo sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t30/' /etc/login.defs
 sudo sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t2/' /etc/login.defs 
 sudo chmod 777 /etc/pam.d/common-password
