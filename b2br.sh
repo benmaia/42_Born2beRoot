@@ -4,12 +4,10 @@ $USER = $(whoami)
 
 #If you want to learn more in depth every command and flag you can go to https://github.com/benmaia/42_Born2beRoot/tree/master/Born2beRoot
 
-sudo -i
-
 #Update and Upgrade the system
 sudo apt update
 sudo apt upgrade -y
-sudo apt install --reinstall ca-certificates
+sudo apt install openssh-server
 
 #Add user to sudo group
 sudo usermod -aG sudo $USER
