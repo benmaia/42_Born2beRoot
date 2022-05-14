@@ -28,24 +28,22 @@ sudo ufw allow 4242/tcp
 sudo apt install libpam-pwquality
 sudo sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t30/' /etc/login.defs
 sudo sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t2/' /etc/login.defs 
-sudo sed -in 's/password	requisite			pam_pwquality.so retry=3/password	requisite			pam_pwquality.so retry=3 ucredit=-1 lcredit=-1 dcredit=-1 minlen=10 maxrepeat=3 usercheck=0 difok=7 enforce_for_root' /etc/pam.d/common-password
+sudo chmod 777 /etc/pam.d/common-password
+sudo echo 'password	requisite			pam_pwquality.so retry=3 ucredit=-1 lcredit=-1 dcredit=-1 minlen=10 maxrepeat=3 usercheck=0 difok=7 enforce_for_root' >> /etc/pam.d/common-password
 
 #SUDO Policy
+sudo mkdir -p /var/log/sudo
 sudo echo 'Defaults	requiretty' | sudo EDITOR='tee -a' visudo
 sudo echo 'Defaults	logfile="/var/log/sudo/sudo.log"' | sudo EDITOR='tee -a' visudo
 sudo echo 'Defaults	log_input, log_output' | sudo EDITOR='tee -a' visudo
 sudo echo 'Defaults	passwd_tries=3' | sudo EDITOR='tee -a' visudo
 sudo echo 'Defaults	badpass_message="Take a chill pill and think things over"' | sudo EDITOR='tee -a' visudo
 
-#sudo sed -in '/Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"/a Defaults requiretty\n Defaults logfile="/var/log/sudo/sudo.log"\n Defaults log_input, log_output\n Defaults passwd_tries=3\n Defaults badpass_message="Take a chillpill and think things over"\n' /etc/sudoers
-sudo apt update
-mv /var/log/sudo-io/ /var/log/sudo
 
 #Adding Script
 sudo cp monitoring.sh /usr/local/bin
 sudo chmod 777 /usr/local/bin/monitoring.sh
 sudo echo "$USER ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh" | sudo EDITOR='tee -a' visudo
-#sudo sed -in '/%sudo ALL=(ALL:ALL) ALL/a $USER ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh'
 
 cron="*/10 * * * * /usr/local/bin/monitoring.sh\n@reboot sleep 10; sh /usr/local/bin/monitoring.sh"
 (crontab -u $(whoami) -l; echo "$cron") | crontab -u $(whoami) -
