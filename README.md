@@ -1,6 +1,16 @@
 # 42_Born2beRoot
 This is a script that init a VM, install a debian server and sets a sudo and pw policy, and run a script with the system info. 42 project Born2beRoot.
 
+<h2> Index </h2>
+<p><a href="#In">
+  Instructions
+</a></p>
+<p><a href="#Tu">
+  Video Tutorial
+</a></p>
+
+<h2 id="In">Instructions</h2>
+
 To start download the debian.iso through <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">here</a> and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
 
 Clone this repo to your desktop, or update your path in vm.sh.
@@ -56,3 +66,12 @@ To check how to do the signature check <a href="https://github.com/benmaia/42_B2
 To learn more in deep the theory behind the project check my guide <a href="https://github.com/benmaia/42_B2bR/tree/master/Born2beRoot#Set%20the%20basic%20up" target="_blank">here</a>.
 
 To study to evaluation see my evaluation guide <a href="https://github.com/benmaia/42_B2bR/tree/master/Evaluation#Evaluation" target="_blank">here</a>.
+
+<h2 id="Tu">Video Tutorial</h2>
+
+VM + Debian instalation
+<img src="" width="1000" height="450">
+
+Born2beRoot Script
+<img src="" width="1000" height="450">
+
