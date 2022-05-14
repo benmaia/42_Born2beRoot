@@ -1,8 +1,10 @@
 #!/bin/bash
 
-$USER = $1
+$USER = $(whoami)
 
 #If you want to learn more in depth every command and flag you can go to https://github.com/benmaia/42_Born2beRoot/tree/master/Born2beRoot
+
+sudo -i
 
 #Update and Upgrade the system
 sudo apt update
@@ -23,7 +25,6 @@ sudo sed -i 's/#Port 22/Port 4242/' /etc/ssh/sshd_config
 sudo apt install ufw
 sudo ufw enable
 sudo ufw allow 4242/tcp
-sudo ssh -p 4242 $USER@10.0.2.15
 
 #Doing the password policy
 sudo apt install libpam-pwquality
@@ -50,3 +51,6 @@ sudo echo "$USER ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh" | sudo EDITOR
 
 cron="*/10 * * * * /usr/local/bin/monitoring.sh\n@reboot sleep 10; sh /usr/local/bin/monitoring.sh"
 (crontab -u $(whoami) -l; echo "$cron") | crontab -u $(whoami) -
+
+#Reset PC to update 4242 Port after run $(whoami)@10.0.2.15
+sudo reboot
