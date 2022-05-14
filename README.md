@@ -1,6 +1,8 @@
 # 42_Born2beRoot
 This is a script that init a VM, install a debian server and sets a sudo and pw policy, and run a script with the system info. 42 project Born2beRoot.
 
+Check the project <a href="https://github.com/benmaia/42_Born2beRoot_Guide" target="_blank">here</a>!
+
 <h2> Index </h2>
 <p><a href="#In">
   Instructions
