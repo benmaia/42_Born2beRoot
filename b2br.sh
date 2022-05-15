@@ -19,12 +19,12 @@ sudo usermod -aG user42 $USER
 #Change from port 22 to 4242
 sudo sed -i 's/#Port 22/Port 4242/' /etc/ssh/sshd_config 
 
-#Install and acivate ufw
+#UFW
 sudo apt install ufw -y
 sudo ufw enable
 sudo ufw allow 4242/tcp
 
-#Doing the password policy
+#Password Policy
 sudo apt install libpam-pwquality -y
 sudo sed -i 's/PASS_MAX_DAYS\t99999/PASS_MAX_DAYS\t30/' /etc/login.defs
 sudo sed -i 's/PASS_MIN_DAYS\t0/PASS_MIN_DAYS\t2/' /etc/login.defs 
@@ -45,6 +45,7 @@ sudo cp monitoring.sh /usr/local/bin
 sudo chmod 777 /usr/local/bin/monitoring.sh
 sudo echo "$USER ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh" | sudo EDITOR='tee -a' visudo
 
+#Crontab on user
 cron="*/10 * * * * /usr/local/bin/monitoring.sh\n@reboot sleep 30; sh /usr/local/bin/monitoring.sh"
 (crontab -u $(whoami) -l; echo "$cron") | crontab -u $(whoami) -
 
