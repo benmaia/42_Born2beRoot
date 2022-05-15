@@ -12,14 +12,14 @@ VBoxManage modifyvm $MACHINENAME --memory 4096 --vram 128
 VBoxManage modifyvm $MACHINENAME --nic1 nat
 
 #Create Disk, connect Debian ISO
-if [$(uname) = Linux]
+if ["$(uname)" == "Linux"]
 then
 		  VBoxManage createhd --filename `pwd`../$MACHINENAME/$MACHINENAME_DISK.vdi --size 10000 --format VDI
 else
 		  VBoxManage createhd --filename `pwd`/goinfre/$(whoami)/$MACHINENAME/$MACHINENAME_DISK.vdi --size 10000 --format VDI
 fi
 VBoxManage storagectl $MACHINENAME --name "SATA Controller" --add sata --controller IntelAhci
-if [$(uname) = Linux]
+if ["$(uname)" == "Linux"]
 then
 		  VBoxManage storageattach $MACHINENAME --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium  `pwd`../$MACHINENAME/$MACHINENAME_DISK.vdi
 else
