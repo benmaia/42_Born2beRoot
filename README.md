@@ -21,7 +21,7 @@ git -C ~/Desktop clone https://github.com/benmaia/42_Born2beRoot.git
 ```
 Go inside the dir and execute the vm.sh with the name you want to give to your VM.
 ```bash
-cd ~/Desktop/42_Born2beRoot && vm.sh Born2beRoot
+cd ~/Desktop/42_Born2beRoot && ./vm.sh Born2beRoot
 ```
 
 
