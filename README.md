@@ -67,7 +67,7 @@ To check how to do the signature check <a href="https://github.com/benmaia/42_B2
 
 To learn more in deep the theory behind the project check my guide <a href="https://github.com/benmaia/42_B2bR/tree/master/Born2beRoot#Set%20the%20basic%20up" target="_blank">here</a>.
 
-For the evaluation you will need to change the crontab from 10mins to 1, and it's a bit different from the guide, you will have to
+For the evaluation you will need to change the crontab from 10mins to 1, and it's a bit different from the guide, you will have to:
 ```bash
 crontab -r
 ```
@@ -82,5 +82,5 @@ To study to evaluation see my evaluation guide <a href="https://github.com/benma
 <img src="https://cdn.discordapp.com/attachments/461563270411714561/975159407904178236/vm.gif" width="1000" height="450">
 
 ### Born2beRoot Script
-<img src="https://cdn.discordapp.com/attachments/461563270411714561/975162991022604318/b2br.gif" width="1000" height="750">
+<img src="https://cdn.discordapp.com/attachments/461563270411714561/975162991022604318/b2br.gif" width="1000" height="600">
 
