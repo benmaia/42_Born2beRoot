@@ -13,7 +13,7 @@ Check the project <a href="https://github.com/benmaia/42_Born2beRoot_Guide" targ
 
 <h2 id="In">Instructions</h2>
 
-To start download the debian.iso through <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">here</a> and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
+To start **DOWNLOAD THE DEBIAN.ISO -> <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">HERE</a>** and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
 
 Clone this repo to your desktop, or update your path in vm.sh.
 ```bash
