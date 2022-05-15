@@ -45,7 +45,7 @@ sudo cp monitoring.sh /usr/local/bin
 sudo chmod 777 /usr/local/bin/monitoring.sh
 sudo echo "$USER ALL=(ALL) NOPASSWD: /usr/local/bin/monitoring.sh" | sudo EDITOR='tee -a' visudo
 
-cron="*/10 * * * * /usr/local/bin/monitoring.sh\n@reboot sleep 10; sh /usr/local/bin/monitoring.sh"
+cron="*/10 * * * * /usr/local/bin/monitoring.sh @reboot sleep 30; sh /usr/local/bin/monitoring.sh"
 (crontab -u $(whoami) -l; echo "$cron") | crontab -u $(whoami) -
 
 #Reset PC to update 4242 Port after run $(whoami)@10.0.2.15

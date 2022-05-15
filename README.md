@@ -13,7 +13,7 @@ Check the project <a href="https://github.com/benmaia/42_Born2beRoot_Guide" targ
 
 <h2 id="In">Instructions</h2>
 
-To start **DOWNLOAD THE DEBIAN.ISO -> <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">HERE</a>** and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
+To start download the debian.iso through <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">here</a> and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
 
 Clone this repo to your desktop, or update your path in vm.sh.
 ```bash
@@ -21,7 +21,7 @@ git -C ~/Desktop clone https://github.com/benmaia/42_Born2beRoot.git
 ```
 Go inside the dir and execute the vm.sh with the name you want to give to your VM.
 ```bash
-cd ~/Desktop/42_Born2beRoot && ./vm.sh Born2beRoot
+cd ~/Desktop/42_Born2beRoot && vm.sh Born2beRoot
 ```
 
 
@@ -33,11 +33,11 @@ For the user password, and for the encrypted password choose, one that you won't
 When you get inside your user, you will have to run this commands:
 
 ```bash
-sudo apt install --reinstall ca-certificates
+sudo apt install --reinstall ca-certificates -y
 ```
 
 ```bash
-sudo apt install git
+sudo apt install git -y
 ```
 
 ```bash
@@ -59,13 +59,19 @@ sudo ssh -p 4242 bmiguel@10.0.2.15
 ```
 Once done, insert this in the terminal of your local host:
 ```bash
-sudo ssh -p 4242 bmiguel@127.0.0.1
+ssh -p 4242 bmiguel@127.0.0.1
 ```
 After that you ready for evaluation, just need to take the signature of the VDI to a signature.txt.
 
 To check how to do the signature check <a href="https://github.com/benmaia/42_B2bR/tree/master/Born2beRoot#Signature" target="_blank">here</a>.
 
 To learn more in deep the theory behind the project check my guide <a href="https://github.com/benmaia/42_B2bR/tree/master/Born2beRoot#Set%20the%20basic%20up" target="_blank">here</a>.
+
+For the evaluation you will need to change the crontab from 10mins to 1, and it's a bit different from the guide you will have to
+```bash
+crontab -r
+```
+That will delete the current 10min crontab you have, and to add the new one, just go to the line 48 in b2br.sh and replace the 10 for 1.
 
 To study to evaluation see my evaluation guide <a href="https://github.com/benmaia/42_B2bR/tree/master/Evaluation#Evaluation" target="_blank">here</a>.
 
