@@ -19,7 +19,7 @@ Clone this repo to your desktop, or update your path in vm.sh.
 ```bash
 git -C ~/Desktop clone https://github.com/benmaia/42_Born2beRoot.git
 ```
-Go inside the dir and execute the vm.sh with the name you want to give to your VM.
+Go inside the dir and execute the vm.sh with the name you want to give to your VM. Depending of your sgoinfre/user dir on your 42 you mave have to change path of your sgoinfre/user in line 7, 15 and 17 of vm.sh!
 ```bash
 cd ~/Desktop/42_Born2beRoot && ./vm.sh Born2beRoot
 ```
