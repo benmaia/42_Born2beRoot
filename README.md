@@ -16,7 +16,7 @@ This is a script that init a VM, install a debian server and sets a sudo and pw 
 To start **DOWNLOAD THE DEBIAN.ISO THROUGH <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">HERE</a>** and put it inside this repo or change the path of the iso in the vm.sh (line 38), the iso file is modified to engage auto instalation and auto lvm partition.
 
 ```bash
-git -C ~ clone https://github.com/benmaia/42_Born2beroot.git
+git -C ~ clone https://github.com/benmaia/42_Born2beRoot.git
 ```
 Go inside the dir and execute the 42MacOs_vm.sh or 42Linux_vm.sh with the name you want to give to your VM. 
 
@@ -42,7 +42,7 @@ sudo apt install git -y
 ```
 
 ```bash
-git clone https://github.com/benmaia/42_Born2beroot.git
+git clone https://github.com/benmaia/42_Born2beRoot.git
 ```
 
 After that go inside the folder and run the script 42B2br.sh
