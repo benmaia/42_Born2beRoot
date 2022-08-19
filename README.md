@@ -13,17 +13,16 @@ This is a script that init a VM, install a debian server and sets a sudo and pw 
 
 <h2 id="In">Instructions</h2>
 
-To start **DOWNLOAD THE DEBIAN.ISO THROUGH <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">HERE</a>** and put it on Desktop or change the path of the iso in the vm.sh, the iso file is modified to engage auto instalation and auto lvm partition.
+To start **DOWNLOAD THE DEBIAN.ISO THROUGH <a href="https://mega.nz/file/sB4ViYSB#piht6sky5mM2dz25Svlcf9Ipj3BGgAUqNkp6OgIaAOg" target="_blank">HERE</a>** and put it inside this repo or change the path of the iso in the vm.sh (line 38), the iso file is modified to engage auto instalation and auto lvm partition.
 
-Clone this repo to your desktop, or update your path in vm.sh.
 ```bash
-git -C ~/Desktop clone https://github.com/benmaia/42_Born2beRoot.git
+git -C ~ clone https://github.com/benmaia/42_Born2beroot.git
 ```
-Go inside the dir and execute the vm.sh with the name you want to give to your VM. 
+Go inside the dir and execute the 42MacOs_vm.sh or 42Linux_vm.sh with the name you want to give to your VM. 
 
-Depending of your sgoinfre/user dir on your 42 you mave have to change path of your sgoinfre/user in line 7, 15 and 17 of vm.sh!
+Depending of your sgoinfre/user dir on your 42 you mave have to change path of your sgoinfre/user in line 17, 34 and 36 of vm.sh!
 ```bash
-cd ~/Desktop/42_Born2beRoot && ./vm.sh Born2beRoot
+cd ~/42_Born2beRoot && ./42Linux_vm.sh Born2beRoot
 ```
 
 
@@ -43,19 +42,23 @@ sudo apt install git -y
 ```
 
 ```bash
-git clone https://github.com/benmaia/42_Born2beRoot.git
+git clone https://github.com/benmaia/42_Born2beroot.git
 ```
 
-After that go inside the folder and run the script b2br.sh
+After that go inside the folder and run the script 42B2br.sh
 
 
 ```bash
-cd 42_Born2beRoot && ./b2br.sh
+cd 42_Born2beRoot && ./42B2br.sh
 ```
 
+
 The script will install openssh-server and ufw, and will add a password policy, a sudo policy, put a script to scan the system and set the crontab to play the script every 10 mins.
-The script will reset the computer to change the ports from 22 to 4242.
-After that insert the remote connection id to the port 4242 with sudo ssh -p 4242 your.user@10.0.2.15.
+It will also reset the computer to change the ports from 22 to 4242.
+After that insert the remote connection id to the port 4242 with sudo ssh -p 4242.
+
+### MacOs
+
 ```bash
 sudo ssh -p 4242 bmiguel@10.0.2.15
 ```
@@ -63,6 +66,28 @@ Once done, insert this in the terminal of your local host:
 ```bash
 ssh -p 4242 bmiguel@127.0.0.1
 ```
+
+### Linux
+
+First we have to discover the right IP. For that run:
+
+```bash
+ip a | grep inet | grep 'global dynamic' | cut -d'/' -f1 | awk '{ print $2 }'
+```
+
+Copy that ip and put it in the command bellow:
+<br>
+sudo ssh -p 4242 bmiguel@your_ip
+
+```bash
+sudo ssh -p 4242 your_user@your_ip
+```
+Once done, insert this in the terminal of your local host:
+```bash
+ssh -p 4242 your_user@your_ip
+```
+
+
 After that you ready for evaluation, just need to take the signature of the VDI to a signature.txt.
 
 To check how to do the signature check <a href="https://github.com/benmaia/42_B2bR/tree/master/Born2beRoot#Signature" target="_blank">here</a>.
